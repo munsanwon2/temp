@@ -20,14 +20,14 @@ requirements:
 
 ## Build
 
-For a generic build
+For a benchmark
 ```
 $ mkdir -p build
 $ cd build
-$ cmake -DSQISIGN_BUILD_TYPE=ref ..
-$ make
+$ cmake -DCMAKE_BUILD_TYPE=Release -DSQISIGN_BUILD_EXAMPLES=ON ..
+$ make sqisign_bench_signature_lvlx
 $ ulimit -s unlimited
-$ make test
+$ ./src/signature/ref/lvl1/test/sqisign_bench_signature_lvl1
 ```
 
 An optimized executable with debug code and assertions disabled can be built
